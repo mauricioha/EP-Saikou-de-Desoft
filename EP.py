@@ -24,7 +24,7 @@ while acao!=0:
                 print('Só é aceito numero positivo')
                 quantidade = int(input('Quantidade?'))
             produtos[produto] = quantidade
-    acao=int(input('''Controle de estoque
+        acao=int(input('''Controle de estoque
             0 - sair
             1 - adicionar item
             2 - remover item
@@ -32,6 +32,23 @@ while acao!=0:
             4 - imprimir estoque
             Faça sua escolha: '''))
     elif acao == 2:
-        produto = input('Qual o produto?')
-            
+        produto = input('Nome do produto:')
+        if produto not in produtos:
+            print('Elemento não encontrado')
+            acao=int(input('''Controle de estoque
+            0 - sair
+            1 - adicionar item
+            2 - remover item
+            3 - alterar item
+            4 - imprimir estoque
+            Faça sua escolha: '''))
+        else:
+            del produtos[produto]
+            acao=int(input('''Controle de estoque
+            0 - sair
+            1 - adicionar item
+            2 - remover item
+            3 - alterar item
+            4 - imprimir estoque
+            Faça sua escolha: '''))
 print(produtos)
